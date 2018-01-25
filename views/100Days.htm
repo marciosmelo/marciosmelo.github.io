@@ -5,27 +5,29 @@
   <script src="https://unpkg.com/vue"></script>
 </head>
 <body>
-  <div id="app-6">
-    <p>{{ message }}</p>
-    <input v-model="message">
-    
-    <button v-on:click="reverseMessage">Tweet</button>
+   <div id="app">
+     <p>{{ message }}</p>
+     <button v-on:click="dailyMessage">Reverse Message</button>
   </div>
   
 
 <script>
-  var app6 = new Vue({
-    el: '#app-6',
-    data: {
-      message: '#100DaysOfCode Day ' + '11'
-    },
-    methods: {
-      reverseMessage: function () {
-        return 'https://twitter.com/intent/tweet?text=I%27m%20publicly%20committing%20to%20the%20100DaysOfCode%20Challenge%20starting%20today!%20Learn%20More%20and%20Join%20me!&url=http://100DaysOfCode.com&hashtags=100DaysOfCode'
-      }
+ 
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    message: '#100DaysOfCode Day '
+  },
+  methods: {
+    dailyMessage: function () {
+      const initialDate = new Date(2018,0,13);
+      var today = new Date();
+      var oneDay = 24*60*60*1000;
+      this.message += Math.round(Math.abs((initialDate.getTime() - today.getTime())/(oneDay)));
     }
-    
-  })
+  }
+})
  
   
 </script>
