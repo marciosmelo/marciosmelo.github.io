@@ -1,0 +1,13 @@
+/*Make parent element a flex container*/
+ul 
+{
+    list-style:none;
+    flex-flow: row wrap; /*direction "row" and yes, please wrap the items.*/
+}
+li
+{
+    width: 100px;
+    height: 100px;
+    background-color: #8cacea;
+    margin: 8px;
+}
