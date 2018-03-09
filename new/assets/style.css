@@ -1,13 +1,44 @@
-/*Make parent element a flex container*/
-ul 
+html,body
 {
-    list-style:none;
-    flex-flow: row wrap; /*direction "row" and yes, please wrap the items.*/
+    height: 100%; /*setting this explicitly is important*/
 }
-li
-{
-    width: 100px;
-    height: 100px;
-    background-color: #8cacea;
-    margin: 8px;
-}
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    margin: 0;
+    font-family: Lato, sans-serif;
+    color: #222;
+    font-size: 0.9em;
+  }
+  footer {
+    flex: 0 0 90px;
+    padding: 10px;
+    color: #fff;
+    background-color: rgba(61, 100, 158, .9);
+  }
+  main {
+    flex: 1 0 auto; /*Is a flex item*/
+    display: flex; /*I just included this! - now a flex container with flex items: sidebar & main content section*/
+    }
+    aside {
+   
+        flex: 0 0 40px; /*do not grow or shrink. Stay fixed at 40px*/ 
+        display: flex; /*Now a flex-container too*/
+  
+    
+        flex-direction: column; /*stack icons vertically*/
+      
+        
+        /*since direction is changed, this works on the vertical direction*/
+        justify-content: space-around;   
+    
+        
+        align-items: center; /*direction is changed! This affects the horizontal direction. Places Icons in the center*/
+      
+       
+         background-color: #f2f2f2; /*make me pretty*/
+      }
+         aside i.fa {
+            font-size: 0.9em;  /*font size for the icons*/
+      }
